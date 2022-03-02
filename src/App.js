@@ -1,25 +1,37 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Cards from './components/Cards';
 import './App.css';
+import Nav from './components/Nav';
 
-function App() {
+export default function App() {
+  const [cities, setCities] = useState([]);
+
+  function onSearch(ciudad) {
+    //Acá habría que hacer el llamado a la API para obtener los datos de la ciudad
+    //pero de momento agregaremos una ciudad por default para ver que funcione
+
+    const ciudadEjemplo = {
+      min: 32,
+      max: 35,
+      img: "03n",
+      id: 2172797,
+      wind: 3.6,
+      temp: 300.15,
+      name: "Cairns",
+      weather: "Clouds",
+      clouds: 40,
+      latitud: -16.92,
+      longitud: 145.77
+    };
+    setCities(oldCities => [...oldCities, ciudadEjemplo]);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav onSearch={onSearch}/>
+      <Cards />
     </div>
   );
-}
+};
 
-export default App;
+
