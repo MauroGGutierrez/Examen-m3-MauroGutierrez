@@ -103,7 +103,7 @@ function App() {
 
   ...
 
-  function onSearch(ciudad) {
+  const onSearch = (ciudad)=>{
     //Acá habría que hacer el llamado a la API para obtener los datos de la ciudad
     //pero de momento agregaremos una ciudad por default para ver que funcione
 
@@ -158,10 +158,11 @@ export default function SearchBar({ onSearch }) {
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        onSearch('Cairns');
-      }}>
-      <input type='text' placeholder='Ciudad...' />
-      <input type='submit' value='Agregar' />
+        onSearch("Cairns");
+      }}
+    >
+      <input type="text" placeholder="Ciudad..." />
+      <input type="submit" value="Agregar" />
     </form>
   );
 }

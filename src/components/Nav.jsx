@@ -7,7 +7,7 @@ function Nav({onSearch}) {
   return (
   <nav class="navbar navbar-light bg-dark">
   <div class="navbar-brand ">
-    <img src={Logo}></img>
+    <img src={Logo} alt="logo"></img>
     <a class="navbar-brand my-2 ml-3 text-light" href="#">Henry - Weather App</a>
   </div>
   <SearchBar onSearch={onSearch}/>
