@@ -1,6 +1,7 @@
 .card {
   margin: 20px;
   width: 18rem;
+  border: 1px solid green;
 }
 
 .card-title {
